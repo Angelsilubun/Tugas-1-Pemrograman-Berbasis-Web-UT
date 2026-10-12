@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Informasi Stok Bahan Ajar - SITTA</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="stok">
+    <header id="nav"></header>
+
+    <main>
+      <h1>Informasi Bahan Ajar</h1>
+      <p class="muted">Data Bahan Ajar: <span id="jumlah"></span></p>
+
+      <section class="panel table-wrap" aria-label="Daftar stok">
+        <table>
+          <caption
+            class="muted"
+            style="text-align: left; padding-bottom: 0.5rem"
+          >
+            Stok bahan ajar per lokasi
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Cover</th>
+              <th scope="col">Kode Lokasi</th>
+              <th scope="col">Kode Barang</th>
+              <th scope="col">Nama Barang</th>
+              <th scope="col">Jenis</th>
+              <th scope="col">Edisi</th>
+              <th scope="col">Stok</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tbStok"></tbody>
+        </table>
+      </section>
+
+      <section class="panel" aria-labelledby="tTambah">
+        <h2 id="tTambah">Tambah stok baru</h2>
+        <form id="formStok" novalidate>
+          <div class="grid-form">
+            <div>
+              <label for="kodeLokasi">Kode lokasi</label
+              ><input id="kodeLokasi" name="kodeLokasi" placeholder="0JKT01" />
+            </div>
+            <div>
+              <label for="kodeBarang">Kode barang</label
+              ><input
+                id="kodeBarang"
+                name="kodeBarang"
+                placeholder="EKMA4116"
+              />
+            </div>
+            <div>
+              <label for="namaBarang">Nama barang</label
+              ><input id="namaBarang" name="namaBarang" />
+            </div>
+            <div>
+              <label for="jenisBarang">Jenis</label
+              ><select id="jenisBarang" name="jenisBarang">
+                <option>BMP</option>
+                <option>Non-BMP</option>
+              </select>
+            </div>
+            <div>
+              <label for="edisi">Edisi</label
+              ><input id="edisi" name="edisi" inputmode="numeric" />
+            </div>
+            <div>
+              <label for="stok">Stok</label
+              ><input id="stok" name="stok" type="number" min="0" />
+            </div>
+            <div class="full">
+              <label for="cover">Gambar cover (opsional)</label
+              ><input id="cover" name="cover" type="file" accept="image/*" />
+            </div>
+          </div>
+          <p class="err" id="stokErr" role="alert"></p>
+          <button type="submit" class="btn">Tambah baris</button>
+        </form>
+      </section>
+    </main>
+
+    <div
+      class="modal"
+      id="modalDetail"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tDetail"
+    >
+      <div class="modal-card">
+        <h2 id="tDetail">Detail Bahan Ajar</h2>
+        <img id="coverDetail" class="cover" alt="" hidden />
+        <dl id="isiDetail"></dl>
+        <div class="actions">
+          <button type="button" class="btn" data-close="modalDetail">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>Universitas Terbuka - Tugas Praktik 1</footer>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

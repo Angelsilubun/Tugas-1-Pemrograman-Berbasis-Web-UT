@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tracking Pengiriman - SITTA</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="tracking">
+    <header id="nav"></header>
+    <main>
+      <h1>Tracking Pengiriman</h1>
+      <section class="panel" aria-labelledby="tCari">
+        <h2 id="tCari" class="muted" style="font-size: 1rem">
+          Cari Delivery Order
+        </h2>
+        <form id="formCari" class="inline-form" novalidate>
+          <div>
+            <label for="nomorDO">Nomor Delivery Order</label>
+            <input
+              type="text"
+              id="nomorDO"
+              name="nomorDO"
+              inputmode="numeric"
+              placeholder="contoh: 2023001234"
+            />
+          </div>
+          <button type="submit" class="btn">Cari</button>
+        </form>
+        <p class="err" id="cariErr" role="alert"></p>
+      </section>
+      <div id="hasil" aria-live="polite"></div>
+    </main>
+    <footer>Universitas Terbuka - Tugas Praktik 1</footer>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
